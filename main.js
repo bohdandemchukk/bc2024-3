@@ -1,7 +1,7 @@
 const fs = require('fs');
 const {program} = require('commander');
 program 
-    .requiredOption('-i, --input <path>', 'Path to input file')
+    .option('-i, --input <path>', 'Path to input file')
     .option('-o, --output <path>', 'Path to output file') 
     .option('-d, --display', 'Display result in console'); 
 
@@ -44,4 +44,5 @@ if (options.output) {
         console.error('Error writing to file:', error); } 
     } 
 
-if (options.display) { console.log('Result:', result); }
+if (options.display) {
+    console.log('Result:', result); }
